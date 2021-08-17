@@ -71,5 +71,22 @@ namespace Valve.VR.InteractionSystem.Sample
                 }
             }
         }
+
+        public void RestartGame()
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            Destroy(player);
+            Application.LoadLevel(Application.loadedLevel);
+        }
+
+        public void CloseMenu(GameObject menu)
+        {
+            menu.gameObject.SetActive(false);
+        }
+
+        public void OpenMenu(GameObject menu)
+        {
+            menu.gameObject.SetActive(true);
+        }
     }
 }
