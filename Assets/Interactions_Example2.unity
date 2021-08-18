@@ -98655,14 +98655,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 4f6a960f6ec10ea4ba52f7eda20b265d,
         type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'mixamorig9:Hips'\n\tTransform 'mixamorig9:LeftHandRing3'\n\tTransform
-        'mixamorig9:RightHandRing1'\n\tTransform 'mixamorig9:LeftHandPinky3'\n\tTransform
-        'mixamorig9:LeftHandIndex2'\n\tTransform 'mixamorig9:RightHandThumb2'\n\tTransform
-        'mixamorig9:LeftForeArm'\n\tTransform 'mixamorig9:LeftFoot'\n\tTransform
-        'mixamorig9:RightHandThumb3'\n\tTransform 'mixamorig9:RightHandPinky1'\n\tand
-        more ...\n\tFrom animation clip 'Help'"
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f6a960f6ec10ea4ba52f7eda20b265d, type: 3}
@@ -100240,7 +100233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3396329275793860400}
   m_LocalRotation: {x: -0, y: -0.7144821, z: -0, w: 0.69965374}
-  m_LocalPosition: {x: -0.059, y: -0.118, z: 0.64}
+  m_LocalPosition: {x: -0.36, y: -0.118, z: 0.634}
   m_LocalScale: {x: 0.18117191, y: 0.18117191, z: 0.18117191}
   m_Children:
   - {fileID: 5335794885944985464}
@@ -100812,7 +100805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4848267030741049281}
   m_LocalRotation: {x: 0.00000004284071, y: 1.0681845e-10, z: 0.0024933787, w: 0.9999969}
-  m_LocalPosition: {x: -0.005, y: 0.111, z: -0.512}
+  m_LocalPosition: {x: -0.005, y: 0.111, z: -0.5472}
   m_LocalScale: {x: 1.4885368, y: 1.4885368, z: 1.4885368}
   m_Children: []
   m_Father: {fileID: 5335794885944985464}
