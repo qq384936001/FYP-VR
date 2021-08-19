@@ -13,6 +13,7 @@ public class AED_Button_Effect : MonoBehaviour
     public bool readyToStock = false;
     public int turnedOn = 0;
     AudioSource audioSource;
+    public bool turnOn = false;
 
     private void Start()
     {
@@ -47,9 +48,14 @@ public class AED_Button_Effect : MonoBehaviour
 
     public void turnOnAED()
     {
-        Debug.Log("I turned on you");
-        audioSource.PlayOneShot(AED_Turn_Effect);
-        audioSource.PlayOneShot(AED_Help_Effect);
+        if (!turnOn) {
+            Debug.Log("I turned on you");
+            audioSource.PlayOneShot(AED_Turn_Effect);
+            audioSource.PlayOneShot(AED_Help_Effect);
+            Patient.startShowPadPosition();
+            turnOn = true;
+        }
+       
         //show the pads and the position
     }
 

@@ -8,12 +8,14 @@ public class HeartRate : MonoBehaviour
     public static Text scoretext;
     public static float heartRate_f = 120f;
     public static int heartRate = 0;
-
+    AudioSource audioSource;
+    public AudioClip heartRateSound;
     void Start()
     {
         scoretext = GetComponent<Text>();
         heartRate = PlayerPrefs.GetInt("ScoreData", heartRate);
         Heart();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,11 +36,20 @@ public class HeartRate : MonoBehaviour
 
     public void Heart() {
         InvokeRepeating("ChangeHeartRate", 2f, 2f);
+        InvokeRepeating("heartRateSoundEffect", 1f, 4.9f);
     }
 
     public void ChangeHeartRate() {
         heartRate_f = Random.Range(20, 200);
         Debug.Log(heartRate_f);
+    }
+
+
+
+    public void heartRateSoundEffect()
+    {
+        audioSource.PlayOneShot(heartRateSound);
+
     }
 
     public void gameOver()

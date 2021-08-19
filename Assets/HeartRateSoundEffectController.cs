@@ -13,5 +13,6 @@ public class HeartRateSoundEffectController : MonoBehaviour
 
     public void heartRateSoundEffect() {
         audioSource.PlayOneShot(heartRate);
+       
     }
 }
