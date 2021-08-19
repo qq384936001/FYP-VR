@@ -61,4 +61,36 @@ public class AED_Button_Effect : MonoBehaviour
     public void afterStock() {
         audioSource.PlayOneShot(AED_After_Stock_Effect);
     }
+
+
+
+    //player press turned button
+
+
+    //機: 立即.......  , spawn pad x 2  ,show stick position
+
+    //解衣物
+
+    //衣服setactive = false
+
+    //提示貼pad 
+
+    //if pad = 4, said leave patient >>分析中 
+
+    //機: leave patient, ready to stock 
+
+    //player press stock 
+
+    //stock , 機: finish stock 
+
+    //player keep to do CPR, after 5 around, will call player and computer to leave patient 
+
+
+
+    //player >>take AED >> press button >> take off patient>> stick pad>> leave patient>> press stock>>wait 5 round>> press stock
+    //AED                   turn on >> pad set active>>         check pad number            
+    //patient   fall down       show pad position    cloth off                             random 1-2 time will car come
+    //computer  keep doing CPR                                             leave patient               CPR again 
+    
+
 }
