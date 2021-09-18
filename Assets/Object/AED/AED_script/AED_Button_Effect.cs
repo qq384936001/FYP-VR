@@ -52,7 +52,7 @@ public class AED_Button_Effect : MonoBehaviour
             Debug.Log("I turned on you");
             audioSource.PlayOneShot(AED_Turn_Effect);
             audioSource.PlayOneShot(AED_Help_Effect);
-            Patient.startShowPadPosition();
+            //Patient.startShowPadPosition();
             turnOn = true;
         }
        

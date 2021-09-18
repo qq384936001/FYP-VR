@@ -41,7 +41,7 @@ public class HeartRate : MonoBehaviour
 
     public void ChangeHeartRate() {
         heartRate_f = Random.Range(20, 200);
-        Debug.Log(heartRate_f);
+        //Debug.Log(heartRate_f);
     }
 
 

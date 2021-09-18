@@ -14,8 +14,8 @@ public class Patient : MonoBehaviour
         animator = GetComponent<Animator>();
         pad01_position = GameObject.Find("pad01_correct_position");
         pad02_position = GameObject.Find("pad02_correct_position");
-        pad01_position.gameObject.SetActive(false);
-        pad02_position.gameObject.SetActive(false);
+        //pad01_position.gameObject.SetActive(false);
+        //pad02_position.gameObject.SetActive(false);
     }
 
     //
@@ -23,7 +23,7 @@ public class Patient : MonoBehaviour
     //cloth anim
     public void OnDisable()
     {
-        cloth.gameObject.SetActive(false);
+       // cloth.gameObject.SetActive(false);
     }
     //if the player click the cloth, the cloth will disable 
 

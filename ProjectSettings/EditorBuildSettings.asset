@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/SteamVR/InteractionSystem/Samples/Johnson.unity
+    path: Assets/Johnson.unity
     guid: db68f20b1974c2448bd314d408666868
   m_configObjects: {}
