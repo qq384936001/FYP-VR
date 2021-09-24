@@ -22,7 +22,7 @@ public class Computer_Position : MonoBehaviour
         Invoke("callForHelp",1);
        // Invoke("Stand", 15);
 
-        Invoke("heartOutPush", 35);
+        //Invoke("heartOutPush", 35);
         
     }
 
@@ -42,7 +42,8 @@ public class Computer_Position : MonoBehaviour
             Invoke("PulseCheck", 6);
             Invoke("callAmbulance", 9);
             Invoke("readyToPush", 12);
-            Invoke("heartOutPush", 13);
+            Invoke("heartOutPush", 14);
+            //Invoke("Stop_and_clear", 16);
 
             //player the voice 
 
@@ -83,6 +84,9 @@ public class Computer_Position : MonoBehaviour
 
     public void RaiseChin() {
         animator.Play("RaiseChin");
+        GameObject patient = GameObject.Find("DM3");
+        Animator patientA = patient.GetComponent<Animator>();
+        patientA.Play("Head_Up");
     }
 
     public void heartOutPush() {
@@ -91,6 +95,16 @@ public class Computer_Position : MonoBehaviour
 
     public void readyToPush() {
         animator.Play("readyToPush");
+    }
+
+    public void Stop_and_clear() {
+        animator.Play("Stop_and_clear");
+    }
+
+    public void CPU_Action() {
+        Invoke("readyToPush", 1);
+        Invoke("heartOutPush", 3);
+
     }
 
 }
