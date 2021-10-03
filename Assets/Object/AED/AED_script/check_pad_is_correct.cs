@@ -18,7 +18,7 @@ public class check_pad_is_correct : MonoBehaviour
         {
             Debug.Log("I found PAD1");
             other.transform.position = new Vector3(correctPosition.position.x, correctPosition.position.y, correctPosition.position.z);
-            other.transform.rotation = new Quaternion(0, 0, 0, 0);
+            //other.transform.rotation = new Quaternion(0, 0, 0, 0);
             other.GetComponent<Rigidbody>().isKinematic = true;
             Debug.Log("PAD1 is ok");
             PADNumber++;

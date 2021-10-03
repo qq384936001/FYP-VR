@@ -9,6 +9,8 @@ namespace Valve.VR.InteractionSystem.Sample
     public class SkeletonUIOptions : MonoBehaviour
     {
 
+        public static int restart = 0;
+        
         public void AnimateHandWithController()
         {
             for (int handIndex = 0; handIndex < Player.instance.hands.Length; handIndex++)
@@ -77,6 +79,8 @@ namespace Valve.VR.InteractionSystem.Sample
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             Destroy(player);
             Application.LoadLevel(Application.loadedLevel);
+            restart++;
+            
         }
 
         public void CloseMenu(GameObject menu)

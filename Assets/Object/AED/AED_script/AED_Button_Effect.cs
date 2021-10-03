@@ -17,7 +17,17 @@ public class AED_Button_Effect : MonoBehaviour
     //GameObject computer;
     public static bool patientWakeUp = false;
     GameObject StartPointer;
-    GameObject ShockPointer;
+    public GameObject ShockPointer;
+    public GameObject ShockEffect;
+    public GameObject cross1;
+    public GameObject cross2;
+    public GameObject cross3;
+    public GameObject cross4;
+    public GameObject cross5;
+    public static int AEDround = 0;
+    public GameObject WinText;
+    //GameObject Player;
+    
 
 
     private void Start()
@@ -25,12 +35,25 @@ public class AED_Button_Effect : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         StartPointer = GameObject.Find("ButtonText/Start_Button_Pointer");
         //StartPointer.gameObject.SetActive(false);
-        ShockPointer = GameObject.Find("ButtonText/SHOCK_Button_Pointer");
+        //ShockPointer = GameObject.Find("ButtonText/SHOCK_Button_Pointer");
         ShockPointer.gameObject.SetActive(false);
+        cross1 = GameObject.Find("AED_Menu/step1/cross1");
+        cross1.gameObject.SetActive(false);
+        cross2 = GameObject.Find("AED_Menu/step2/cross2");
+        cross2.gameObject.SetActive(false);
+        cross3 = GameObject.Find("AED_Menu/step3/cross3");
+        cross3.gameObject.SetActive(false);
+        cross4 = GameObject.Find("AED_Menu/step4/cross4");
+        cross4.gameObject.SetActive(false);
+        cross5 = GameObject.Find("AED_Menu/step5/cross5");
+        cross5.gameObject.SetActive(false);
+        //Player = GameObject.FindGameObjectWithTag("player");
     }
 
     private void Update()
     {
+        
+
         if (turned && turnedOn == 0) {
             turnOnAED();
             turnedOn++;
@@ -64,12 +87,15 @@ public class AED_Button_Effect : MonoBehaviour
             audioSource.PlayOneShot(AED_Help_Effect);
             //Patient.startShowPadPosition();
             turnOn = true;
+            cross1.gameObject.SetActive(true);
         }
        
         //show the pads and the position
     }
 
     public void afterStickThePAD() {
+        cross2.gameObject.SetActive(true);
+        cross3.gameObject.SetActive(true);
         audioSource.PlayOneShot(AED_Stock_Effect);
         GameObject computer = GameObject.Find("Man_a");
         computer.GetComponent<Computer_Position>().Stop_and_clear();
@@ -78,9 +104,17 @@ public class AED_Button_Effect : MonoBehaviour
     }
 
     public void afterStock() {
+        cross4.gameObject.SetActive(true);
         audioSource.PlayOneShot(AED_After_Stock_Effect);
-        ShockPointer = GameObject.Find("ButtonText/SHOCK_Button_Pointer");
+        //ShockPointer = GameObject.Find("ButtonText/SHOCK_Button_Pointer");
         ShockPointer.gameObject.SetActive(false);
+
+        ShockEffect.gameObject.SetActive(true);
+        AEDround++;
+
+        if (AEDround==2) {
+            patientWakeUp = true;
+        }
 
         if (!patientWakeUp)
         {
@@ -90,6 +124,10 @@ public class AED_Button_Effect : MonoBehaviour
         }
         else {
             Debug.Log("You win");
+            GameObject patient = GameObject.Find("DM3");
+            Animator patientA = patient.GetComponent<Animator>();
+            patientA.Play("WakeUp");
+            WinText.gameObject.SetActive(true);
         }
         //if still can not wake up, 
         //  computer continue animation
