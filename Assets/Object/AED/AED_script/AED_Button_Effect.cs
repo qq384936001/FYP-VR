@@ -8,6 +8,7 @@ public class AED_Button_Effect : MonoBehaviour
     public AudioClip AED_Help_Effect;
     public AudioClip AED_Stock_Effect;
     public AudioClip AED_After_Stock_Effect;
+    public AudioClip Success_Effect;
     public bool stocked = false;
     public bool turned = false;
     public bool readyToStock = false;
@@ -128,6 +129,8 @@ public class AED_Button_Effect : MonoBehaviour
             Animator patientA = patient.GetComponent<Animator>();
             patientA.Play("WakeUp");
             WinText.gameObject.SetActive(true);
+            audioSource.PlayOneShot(Success_Effect);
+
         }
         //if still can not wake up, 
         //  computer continue animation
