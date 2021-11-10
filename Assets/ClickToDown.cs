@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ClickToDown : MonoBehaviour
 {
     bool Clicked = false;
@@ -24,7 +25,7 @@ public class ClickToDown : MonoBehaviour
         }
             
     }
-
+    
     
 
     
