@@ -10,7 +10,7 @@ public class AEDMode : MonoBehaviour
     public static float sec_f = 300f;
     public static int sec = 0;
     public Text ui;
-    public bool timerIsRunning = true;
+    public static bool timerIsRunning = false;
     float StartTime = 61f;
 
     void Start()

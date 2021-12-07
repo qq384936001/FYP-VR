@@ -37,6 +37,7 @@ public class Computer_Position : MonoBehaviour
         if (other.tag=="Player") {
 
             Debug.Log("I feel player");
+            AEDMode.timerIsRunning = true;
             //change from can people to talk to player
             Invoke("RaiseChin", 2);
             Invoke("PulseCheck", 6);
