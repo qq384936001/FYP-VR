@@ -55,7 +55,11 @@ public class FindTheAED : MonoBehaviour
             object8.SetActive(true);
             object9.SetActive(true);
             putted = true;
+            
+
             gameObject.SetActive(false);
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            //other.gameObject.SetActive(false);
         }
     }
 

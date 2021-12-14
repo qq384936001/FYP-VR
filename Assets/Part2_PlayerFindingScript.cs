@@ -4,20 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Part1_PlayerRunningScript : MonoBehaviour
+public class Part2_PlayerFindingScript : MonoBehaviour
 {
     public static TMP_Text playerRunningTimeText;
-    public static float sec_f_playerRun = 300f;//300f
+    public static float sec_f_playerRun = 600f;//300f
     public static int sec_playerRun = 0;
     //public Text ui;
-    public static bool part1_playerRunningtimerIsRunning = true;
+    public static bool part2_playerFindingtimerIsRunning = false;
     int score = 0;
     bool calculated_the_marks = false;
     //public Text scoreText;
     //public TextMesh scoreText2;
     //public TextMeshPro scoreText3;
     public TMP_Text scoreText;
-    public TMP_Text timer2;
 
     //float StartTime = 61f;
 
@@ -25,15 +24,14 @@ public class Part1_PlayerRunningScript : MonoBehaviour
     {
         playerRunningTimeText = GetComponent<TMP_Text>();//find the text
         sec_playerRun = PlayerPrefs.GetInt("ScoreData", sec_playerRun);//store value in memory
-        timer2.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        
+
 
         DisplayTime(sec_f_playerRun);
-        if (part1_playerRunningtimerIsRunning)
+        if (part2_playerFindingtimerIsRunning)
         {
 
             if (sec_f_playerRun > 0)
@@ -43,26 +41,24 @@ public class Part1_PlayerRunningScript : MonoBehaviour
             else
             {
                 Debug.Log("Time has run out!");
-                sec_f_playerRun = 0;
-                part1_playerRunningtimerIsRunning = false;
+                //sec_f_playerRun = 0;
+                part2_playerFindingtimerIsRunning = false;
             }
         }
-        else{
+        else
+        {
             //calculate the mark
             if (!calculated_the_marks)
             {
                 score = (int)(sec_f_playerRun * 10);
                 Score.score += score;
-                //scoreText.text = "Score: " + score;
+                //scoreText.text = "Score: " + score.ToString();
                 //scoreText4.text = "Score: " + score.ToString();
                 Debug.Log(score);
                 calculated_the_marks = true;
-
-                Part2_PlayerFindingScript.part2_playerFindingtimerIsRunning = true;
-                timer2.gameObject.SetActive(true);
                 gameObject.SetActive(false);
             }
-            
+
         }
 
 

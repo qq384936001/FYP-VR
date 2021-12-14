@@ -7,7 +7,7 @@ using System;
 public class AEDMode : MonoBehaviour
 {
     public static Text scoretext;
-    public static float sec_f = 300f;
+    public static float sec_f = 600f;
     public static int sec = 0;
     public Text ui;
     public static bool timerIsRunning = false;

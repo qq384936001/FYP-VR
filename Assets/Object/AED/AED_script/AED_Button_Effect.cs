@@ -128,6 +128,7 @@ public class AED_Button_Effect : MonoBehaviour
             GameObject patient = GameObject.Find("DM3");
             Animator patientA = patient.GetComponent<Animator>();
             patientA.Play("WakeUp");
+            Part2_PlayerFindingScript.part2_playerFindingtimerIsRunning = false;
             WinText.gameObject.SetActive(true);
             audioSource.PlayOneShot(Success_Effect);
 
